@@ -1,8 +1,11 @@
-<p>submit-link works!</p>
+<h3>Bitly - shorten your url</h3>
 
+Input your Long Url: 
 <input type="text" [formControl]="urlInput" />
-<button (click)="onClick()">Submit</button>
+<!-- <input type="submit" value="Send" /> -->
+<button (click)="onClick()" class="btn btn-outline-primary">Submit</button>
+<button (click)="onClickReset()" class="btn btn-outline-warning">Reset</button>
+<!-- </div> -->
 
 
-
-<div>Submitted url: {{urlvalue}}</div>
+<div [hidden]="urlvalue">Submitted url: {{urlvalue}}</div>

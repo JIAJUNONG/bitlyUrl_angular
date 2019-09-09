@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { UrlDetailsService } from '../url-details.service';
+import { ActivatedRoute } from '@angular/router';
+
+// import { storage } from '..';
+// import {NextFunction, Request, Response} from 'express';
+// import { storage } from '../../../../express-basic/src/index';
+
 
 @Component({
   selector: 'app-submit-link',
@@ -7,21 +14,36 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./submit-link.component.css']
 })
 export class SubmitLinkComponent implements OnInit {
-  urlInput = new FormControl('');
+  @Input()
+  urlInput = new FormControl();
   urlvalue = 'key in Url';
-
-  constructor() { }
+  
+  // tslint:disable-next-line: no-shadowed-variable
+  constructor(private UrlDetailsService: UrlDetailsService) { }
 
   ngOnInit() {
+    // let id = this.route.sna
+    // this.UrlDetailsService.shortUrl(this.id).subscribe((this.short) => {
+    //   this.short = short
+    // })
   }
 
+
   onClick() {
-    if (this.urlInput) {
-    this.urlvalue = this.urlInput.value;
-    } 
-    else {
-      this.urlvalue;
-    }
+    this.UrlDetailsService.urlInfo(this.urlInput.value).subscribe(Response => {
+      console.log(this.urlInput);
+      console.log(Response);
+      alert('Submitted Successfully');
+      this.urlInput.reset();
+    });
+    //let id = this.rou
+    // this.UrlDetailsService.shortUrl(this.short).subscribe
   }
+
+
+  onClickReset() {
+    this.urlInput.reset();
+  }
+
 
 }
