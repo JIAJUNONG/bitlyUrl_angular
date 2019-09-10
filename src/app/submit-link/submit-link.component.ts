@@ -17,7 +17,6 @@ export class SubmitLinkComponent implements OnInit {
   @Input()
   urlInput = new FormControl();
   urlvalue = 'key in Url';
-  
   // tslint:disable-next-line: no-shadowed-variable
   constructor(private UrlDetailsService: UrlDetailsService) { }
 
@@ -36,7 +35,7 @@ export class SubmitLinkComponent implements OnInit {
       alert('Submitted Successfully');
       this.urlInput.reset();
     });
-    //let id = this.rou
+    // let id = this.rou
     // this.UrlDetailsService.shortUrl(this.short).subscribe
   }
 
