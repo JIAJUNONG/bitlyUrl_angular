@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 // import { SubmitLinkComponent } from '../../../BitlyCloneAssignment/src/app/submit-link/submit-link.component';
 
 
-const BASE_URL = 'http://localhost:3000/postUrl';
-const localUrl = 'http://localhost:3000/links';
+const BASE_URL = 'https://safe-tundra-95217.herokuapp.com/postUrl';
+const localUrl = 'https://safe-tundra-95217.herokuapp.com/links';
 
 
 @Injectable({
